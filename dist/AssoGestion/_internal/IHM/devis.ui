@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>devis</class>
+ <widget class="QMainWindow" name="devis">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1168</width>
+    <height>758</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AssoGestion - Détail devis - AMSE</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+    background-color: #FFE5B4;
+}
+QLineEdit
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFDEAD, stop: 0.1 #FAD5A5, stop: 0.5 #F4BB44, stop: 0.9 #FFAC1C, stop: 1 #E49B0F);
+    padding: 1px;
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+}
+
+QPushButton
+{
+    color: #FFDEAD;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 40px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+
+QComboBox
+{
+	color: #FFDEAD;
+    selection-background-color: #FFDEAD;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+}
+
+QComboBox:hover,QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 1 #F28C28);
+}
+
+
+QComboBox:on
+{
+    padding-top: 3px;
+    padding-left: 4px;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+    selection-background-color: #ffaa00;
+}
+
+QComboBox QAbstractItemView
+{
+    border: 2px solid darkgray;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+
+
+QScrollBar:horizontal {
+     border: 1px solid #222222;
+     background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.0 #121212, stop: 0.2 #282828, stop: 1 #484848);
+     height: 7px;
+     margin: 0px 16px 0 16px;
+}
+
+QScrollBar::handle:horizontal
+{
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #ffa02f, stop: 0.5 #d7801a, stop: 1 #ffa02f);
+      min-height: 20px;
+      border-radius: 2px;
+}
+
+QScrollBar::add-line:horizontal {
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #ffa02f, stop: 1 #d7801a);
+      width: 14px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #ffa02f, stop: 1 #d7801a);
+      width: 14px;
+     subcontrol-position: left;
+     subcontrol-origin: margin;
+}
+
+QScrollBar::right-arrow:horizontal, QScrollBar::left-arrow:horizontal
+{
+      border: 1px solid black;
+      width: 1px;
+      height: 1px;
+      background: white;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+      background: none;
+}
+
+QScrollBar:vertical
+{
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0.0 #121212, stop: 0.2 #282828, stop: 1 #484848);
+      width: 7px;
+      margin: 16px 0 16px 0;
+      border: 1px solid #222222;
+}
+
+QScrollBar::handle:vertical
+{
+      background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 0.5 #d7801a, stop: 1 #ffa02f);
+      min-height: 20px;
+      border-radius: 2px;
+}
+
+QScrollBar::add-line:vertical
+{
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+      height: 14px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical
+{
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d7801a, stop: 1 #ffa02f);
+      height: 14px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical
+{
+      border: 1px solid black;
+      width: 1px;
+      height: 1px;
+      background: white;
+}
+
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+      background: none;
+}
+
+QHeaderView::section:horizontal
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    color: #FFDEAD;;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section:vertical
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    color: #FFDEAD;;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+}
+QTableWidget::item:selected{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFDEAD, stop: 0.1 #FAD5A5, stop: 0.5 #F4BB44, stop: 0.9 #FFAC1C, stop: 1 #E49B0F); }
+
+QDateEdit
+{
+border : 2px solid #E49B0F;
+background-color : QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFDEAD, stop: 0.1 #FAD5A5, stop: 0.5 #F4BB44, stop: 0.9 #FFAC1C, stop: 1 #E49B0F);;
+padding : 5px;
+}
+QDateEdit::up-arraow
+{
+border : 2px solid black;
+background-color : lightgreen;
+
+}
+QDateEdit::down-arrow
+{
+background-color : #E49B0F;
+}
+
+QTabWidget::tab-bar {
+   border: 1px solid #E49B0F;
+}
+
+QTabBar::tab {
+  background: #8B4000;
+  color: white;
+  padding: 10px;
+ }
+
+ QTabBar::tab:selected {
+  background: #E49B0F;
+ }
+
+QTabWidget::pane { 
+   border: none;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="1" colspan="3">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="numero_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>NUMERO</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="button_transform_facture">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>TRANSFORMER EN FACTURE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="3">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="1" column="0" colspan="8">
+        <widget class="QTableWidget" name="tab_ligne">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>false</bool>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>false</bool>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Quantité</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Prix unitaire</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Total</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="8">
+        <widget class="QPushButton" name="button_ligne">
+         <property name="text">
+          <string>AJOUTER UNE LIGNE</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="7">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="5">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>MONTANT TVA</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="12">
+           <widget class="QDoubleSpinBox" name="spin_total_ttc"/>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>BASE</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QDoubleSpinBox" name="spin_base">
+            <property name="value">
+             <double>30.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="11">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>TOTAL TTC</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="8">
+           <widget class="QDoubleSpinBox" name="spin_total_ht"/>
+          </item>
+          <item row="0" column="6">
+           <widget class="QDoubleSpinBox" name="spin_tva">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>TOTAL HT</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="9">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>TOTAL TVA</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="13">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>NET A PAYER</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>% TVA</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="10">
+           <widget class="QDoubleSpinBox" name="spin_total_tva">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="14">
+           <widget class="QDoubleSpinBox" name="spin_net_a_payer"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="edit_tva">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Exonéré</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="12" colspan="2">
+           <widget class="QLabel" name="label_error_regle">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3" colspan="4">
+           <widget class="QLabel" name="label_error_base">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="button_retour">
+      <property name="text">
+       <string>RETOUR</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="3">
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="9" column="2">
+        <widget class="QLineEdit" name="cp_edit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>ADRESSE</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>VILLE</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLineEdit" name="add_edit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>RAISON SOCIALE</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="code_client_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>CODE POSTAL</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="rs_edit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>CLIENT</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QComboBox" name="cb_client"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>CODE CLIENT</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QLineEdit" name="mail_edit"/>
+       </item>
+       <item row="13" column="1">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>EMAIL</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLabel" name="label_error_adresse">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLabel" name="label_error_rs">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QComboBox" name="cb_ville"/>
+       </item>
+       <item row="12" column="2">
+        <widget class="QLabel" name="label_error_ville">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLabel" name="label_error_cp">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="2">
+        <widget class="QLabel" name="label_error_mail">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_error_select_client">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="3">
+        <widget class="QPushButton" name="butt_save">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QPushButton" name="button_valider">
+      <property name="text">
+       <string>VALIDER</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QPushButton" name="button_mail">
+      <property name="text">
+       <string>ENVOYER PAR EMAIL</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="button_pdf">
+      <property name="text">
+       <string>ENREGISTRER EN PDF</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>cb_client</tabstop>
+  <tabstop>rs_edit</tabstop>
+  <tabstop>add_edit</tabstop>
+  <tabstop>cp_edit</tabstop>
+  <tabstop>numero_edit</tabstop>
+  <tabstop>button_ligne</tabstop>
+  <tabstop>tab_ligne</tabstop>
+  <tabstop>edit_tva</tabstop>
+  <tabstop>spin_base</tabstop>
+  <tabstop>spin_tva</tabstop>
+  <tabstop>spin_total_ht</tabstop>
+  <tabstop>spin_total_tva</tabstop>
+  <tabstop>spin_total_ttc</tabstop>
+  <tabstop>spin_net_a_payer</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

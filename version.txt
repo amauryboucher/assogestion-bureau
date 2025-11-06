@@ -1,0 +1,4 @@
+Note de version
+1.0: Lancement du logiciel
+1.2: Correctifs apportés au logiciel
+1.3: correctif de version

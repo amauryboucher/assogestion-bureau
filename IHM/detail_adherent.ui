@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>detail_adherent</class>
+ <widget class="QMainWindow" name="detail_adherent">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>902</width>
+    <height>876</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AssoGestion - Détail adhérent - AMSE</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+    background-color: #FFE5B4;
+}
+QLineEdit
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFDEAD, stop: 0.1 #FAD5A5, stop: 0.5 #F4BB44, stop: 0.9 #FFAC1C, stop: 1 #E49B0F);
+    padding: 1px;
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+}
+
+QPushButton
+{
+    color: #FFDEAD;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 40px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+
+QComboBox
+{
+	color: #FFDEAD;
+    selection-background-color: #FFDEAD;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+}
+
+QComboBox:hover,QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 1 #F28C28);
+}
+
+
+QComboBox:on
+{
+    padding-top: 3px;
+    padding-left: 4px;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+    selection-background-color: #ffaa00;
+}
+
+QComboBox QAbstractItemView
+{
+    border: 2px solid darkgray;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+
+
+QScrollBar:horizontal {
+     border: 1px solid #222222;
+     background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.0 #121212, stop: 0.2 #282828, stop: 1 #484848);
+     height: 7px;
+     margin: 0px 16px 0 16px;
+}
+
+QScrollBar::handle:horizontal
+{
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #ffa02f, stop: 0.5 #d7801a, stop: 1 #ffa02f);
+      min-height: 20px;
+      border-radius: 2px;
+}
+
+QScrollBar::add-line:horizontal {
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #ffa02f, stop: 1 #d7801a);
+      width: 14px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #ffa02f, stop: 1 #d7801a);
+      width: 14px;
+     subcontrol-position: left;
+     subcontrol-origin: margin;
+}
+
+QScrollBar::right-arrow:horizontal, QScrollBar::left-arrow:horizontal
+{
+      border: 1px solid black;
+      width: 1px;
+      height: 1px;
+      background: white;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+      background: none;
+}
+
+QScrollBar:vertical
+{
+      background: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0.0 #121212, stop: 0.2 #282828, stop: 1 #484848);
+      width: 7px;
+      margin: 16px 0 16px 0;
+      border: 1px solid #222222;
+}
+
+QScrollBar::handle:vertical
+{
+      background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 0.5 #d7801a, stop: 1 #ffa02f);
+      min-height: 20px;
+      border-radius: 2px;
+}
+
+QScrollBar::add-line:vertical
+{
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+      height: 14px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical
+{
+      border: 1px solid #1b1b19;
+      border-radius: 2px;
+      background: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d7801a, stop: 1 #ffa02f);
+      height: 14px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical
+{
+      border: 1px solid black;
+      width: 1px;
+      height: 1px;
+      background: white;
+}
+
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+      background: none;
+}
+
+QHeaderView::section:horizontal
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    color: #FFDEAD;;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section:vertical
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+    color: #FFDEAD;;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFAC1C, stop: 0.1 #F28C28, stop: 0.5 #B87333, stop: 0.9 #8B4000, stop: 1 #464646);
+}
+QTableWidget::item:selected{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFDEAD, stop: 0.1 #FAD5A5, stop: 0.5 #F4BB44, stop: 0.9 #FFAC1C, stop: 1 #E49B0F); }
+
+QDateEdit
+{
+border : 2px solid #E49B0F;
+background-color : QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFDEAD, stop: 0.1 #FAD5A5, stop: 0.5 #F4BB44, stop: 0.9 #FFAC1C, stop: 1 #E49B0F);;
+padding : 5px;
+}
+QDateEdit::up-arraow
+{
+border : 2px solid black;
+background-color : lightgreen;
+
+}
+QDateEdit::down-arrow
+{
+background-color : #E49B0F;
+}
+
+QTabWidget::tab-bar {
+   border: 1px solid #E49B0F;
+}
+
+QTabBar::tab {
+  background: #8B4000;
+  color: white;
+  padding: 10px;
+ }
+
+ QTabBar::tab:selected {
+  background: #E49B0F;
+ }
+
+QTabWidget::pane { 
+   border: none;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="1">
+     <widget class="QPushButton" name="butt_valider">
+      <property name="text">
+       <string>SAUVER</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QTabWidget" name="tab_adherent">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_info">
+       <attribute name="title">
+        <string>INFORMATIONS</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="1" colspan="3">
+            <widget class="QLineEdit" name="adresse_edit"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>ADRESSE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>VILLE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1" colspan="2">
+            <widget class="QLineEdit" name="cp_edit"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>CP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="3">
+            <widget class="QLabel" name="label_error_ville">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" colspan="3">
+            <widget class="QLabel" name="label_error_adresse">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1" colspan="2">
+            <widget class="QComboBox" name="cb_ville"/>
+           </item>
+           <item row="4" column="0" colspan="3">
+            <widget class="QLabel" name="label_error_cp">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="adress_comp_edit"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>COMMENTAIRE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QTextEdit" name="textEdit"/>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>NOM</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>PRENOM</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="nom_edit">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>TITRE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="code_edit">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>CODE ADHERENT</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLabel" name="label_error_email">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="label_error_titre">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLabel" name="label_error_nom">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLineEdit" name="prenom_edit"/>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLabel" name="label_error_prenom">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>TELEPHONE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="tel_edit"/>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLineEdit" name="email_edit"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="cb_titre"/>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>EMAIL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="fonction_edit"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>FONCTION</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>MOYEN DE PAIEMENT</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QComboBox" name="cb_paiement_means">
+             <item>
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chèque</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Espèce</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CB</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Virement</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>DATE DE REGLEMENT</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>DATE DE NAISSANCE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>DATE DE PROSPECTION</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QDateEdit" name="adhesion_edit">
+             <property name="displayFormat">
+              <string>dd/MM/yyyy</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QDateEdit" name="naissance_edit">
+             <property name="displayFormat">
+              <string>dd/MM/yyyy</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QDateEdit" name="prospection_edit">
+             <property name="displayFormat">
+              <string>dd/MM/yyyy</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QComboBox" name="cb_type_membre">
+             <item>
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Membre</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ancien Membre</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Prospect</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>CATEGORIE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QCheckBox" name="check_bulletin">
+             <property name="text">
+              <string>BULLETIN</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_adhesion">
+       <attribute name="title">
+        <string>ADHESIONS ET DONS</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="2" column="0">
+         <widget class="QTableWidget" name="tab_adh_dons">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="button_add_don">
+          <property name="text">
+           <string>AJOUTER UN DON</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="button_add_adh">
+          <property name="text">
+           <string>AJOUTER UNE ADHESION</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_act">
+       <attribute name="title">
+        <string>ACTIVITES</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="tab_activites_adherent">
+          <column>
+           <property name="text">
+            <string>Code</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Activité</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Date</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="button_retour">
+      <property name="text">
+       <string>RETOUR</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>code_edit</tabstop>
+  <tabstop>cb_titre</tabstop>
+  <tabstop>fonction_edit</tabstop>
+  <tabstop>nom_edit</tabstop>
+  <tabstop>prenom_edit</tabstop>
+  <tabstop>tel_edit</tabstop>
+  <tabstop>email_edit</tabstop>
+  <tabstop>adresse_edit</tabstop>
+  <tabstop>adress_comp_edit</tabstop>
+  <tabstop>cp_edit</tabstop>
+  <tabstop>cb_ville</tabstop>
+  <tabstop>naissance_edit</tabstop>
+  <tabstop>prospection_edit</tabstop>
+  <tabstop>adhesion_edit</tabstop>
+  <tabstop>cb_type_membre</tabstop>
+  <tabstop>textEdit</tabstop>
+  <tabstop>button_retour</tabstop>
+  <tabstop>butt_valider</tabstop>
+  <tabstop>button_add_adh</tabstop>
+  <tabstop>tab_adh_dons</tabstop>
+  <tabstop>tab_adherent</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
